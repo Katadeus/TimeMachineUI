@@ -10,6 +10,7 @@ public class StaticDigitsAggregator : MonoBehaviour {
     public List<GameObject> digits;
     private GameObject temp;
     public int width = 75;
+    private int tempDigit;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +20,11 @@ public class StaticDigitsAggregator : MonoBehaviour {
             temp.transform.name = "Digit " + i.ToString();
             temp.transform.SetParent(transform);
             temp.transform.localPosition = new Vector3(width / numDigits * i - width / 2 + (width / numDigits) / 2, 0, 0);
+            tempDigit = (int)(number / Mathf.Pow(10, numDigits - i - 1));
+            for(int x = 0; x < 4; x++) {
+                tempDigit = (int)(tempDigit - Mathf.Pow(10, x + 1) * (int)(tempDigit / Mathf.Pow(10, x + 1)));
+            }
+            temp.GetComponent<NumberScript>().i = tempDigit;
             digits.Add(temp);
         }
 	}
