@@ -11,7 +11,7 @@ public class NoReturnScript : MonoBehaviour {
     public Color normal;
     public Color panelNormal;
     public Color panelRed;
-    public float bouncer = 0;
+    public float bouncer = 0; // Bouncer is just the thing that changes over time.
     private bool lastState = false;
 
 	// Use this for initialization
@@ -23,6 +23,7 @@ public class NoReturnScript : MonoBehaviour {
 	void Update () {
 		if (on)
         {
+            // If it's on and it wasn't on before, start flashing.
             if (!lastState)
             {
                 bouncer = 0;
@@ -32,10 +33,11 @@ public class NoReturnScript : MonoBehaviour {
             bouncer += Time.deltaTime;
             if (bouncer > 1.5f && bouncer < 3)
             {
+                // Skip forward a bit to make sure it doesn't skip over anything, but also doesn't reactivate the crossfade.
                 bouncer += 1.5f;
                 GetComponent<Image>().CrossFadeColor(panelNormal, 1.5f, false, false);
             }
-            else if (bouncer > 4.5f || bouncer <= 0)
+            else if (bouncer > 4.5f) // If it's too big, do the other crossfade.
             {
                 bouncer -= 4.5f;
                 GetComponent<Image>().CrossFadeColor(panelRed, 1.5f, false, false);

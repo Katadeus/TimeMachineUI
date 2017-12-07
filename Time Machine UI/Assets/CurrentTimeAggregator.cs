@@ -22,6 +22,8 @@ public class CurrentTimeAggregator : MonoBehaviour {
 
 	}
 
+    // Everything in this script is controlled externally. It exists as a halfway point. The only operation it performs is to actually convey numbers.
+    // This script's conveyance is to send numbers to the interface.
     public void Refresh () {
         yearDigits.GetComponent<StaticDigitsAggregator>().number = y;
         monthDigits.GetComponent<StaticDigitsAggregator>().number = m;

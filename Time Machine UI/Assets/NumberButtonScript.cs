@@ -17,12 +17,14 @@ public class NumberButtonScript : MonoBehaviour {
 		
 	}
 
+    // Move the value up
     public void Up () {
         i++;
         if (i > 9) { i -= 10; }
         GetComponent<Text>().text = i.ToString();
     }
 
+    // Move the value down
     public void Down () {
         i--;
         if (i < 0) { i += 10; }

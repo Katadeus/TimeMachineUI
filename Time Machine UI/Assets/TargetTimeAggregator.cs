@@ -22,6 +22,8 @@ public class TargetTimeAggregator : MonoBehaviour {
         GrabDigits();
 	}
 
+    // Everything in this script is controlled externally. It exists as a halfway point. The only operation it performs is to actually convey numbers.
+    // This script's conveyance is to take digits from the interface.
     void GrabDigits () {
         y = yearDigits.GetComponent<DigitsAggregator>().number;
         m = monthDigits.GetComponent<DigitsAggregator>().number;

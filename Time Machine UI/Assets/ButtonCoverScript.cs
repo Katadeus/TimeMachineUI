@@ -16,8 +16,10 @@ public class ButtonCoverScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        // Check if things need to be moving, then move them.
 		if (active)
-        {
+        {   // If it's supposed to be on, scale it upward.
             if (on)
             {
                 if (yScale < 80)
@@ -30,7 +32,7 @@ public class ButtonCoverScript : MonoBehaviour {
                     active = false;
                 }
             }
-            else
+            else // Otherwise, scale it downward.
             {
                 if (yScale > 10)
                 {
@@ -46,6 +48,7 @@ public class ButtonCoverScript : MonoBehaviour {
         }
 	}
 
+    // All that has to happen here is to switch its state and turn it on.
     public void Scale () {
         on = !on;
         active = true;

@@ -20,8 +20,22 @@ public class ToggleButtonScript : MonoBehaviour {
 		
 	}
 
+    // Most commonly called function
     public void Switch () {
         boo = !boo;
+        if (boo)
+        {
+            child.GetComponent<Text>().text = on;
+        }
+        else
+        {
+            child.GetComponent<Text>().text = off;
+        }
+    }
+
+    // Less commonly used - this is for the current time to change when time travel occurs
+    public void Set (bool intended) {
+        boo = intended;
         if (boo)
         {
             child.GetComponent<Text>().text = on;

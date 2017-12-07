@@ -6,6 +6,8 @@ public class MainButtonScript : MonoBehaviour {
 
     public GameObject CurrentTimePanel;
     public GameObject TargetTimeYMDPanel;
+    public GameObject CurrentADBCE;
+    public GameObject TargetADBCE;
 
 	// Use this for initialization
 	void Start () {
@@ -18,9 +20,15 @@ public class MainButtonScript : MonoBehaviour {
 	}
 
     public void TimeTravel () {
+
+        // Set year, month and date
         CurrentTimePanel.GetComponent<CurrentTimeAggregator>().y = TargetTimeYMDPanel.GetComponent<TargetTimeAggregator>().y;
         CurrentTimePanel.GetComponent<CurrentTimeAggregator>().m = TargetTimeYMDPanel.GetComponent<TargetTimeAggregator>().m;
         CurrentTimePanel.GetComponent<CurrentTimeAggregator>().d = TargetTimeYMDPanel.GetComponent<TargetTimeAggregator>().d;
-        CurrentTimePanel.GetComponent<CurrentTimeAggregator>().Refresh();
+        CurrentTimePanel.GetComponent<CurrentTimeAggregator>().Refresh(); // Setting number isn't enough - need to update interface
+
+        // Set AD/BCE button
+        CurrentADBCE.GetComponent<ToggleButtonScript>().Set(TargetADBCE.GetComponent<ToggleButtonScript>().boo);
+
     }
 }

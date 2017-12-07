@@ -13,7 +13,7 @@ public class NumberScript : MonoBehaviour {
         numField = GetComponent<Text>();
 	}
 	
-	// Update is called once per frame
+	// Set the number's text
 	void Update () {
         numField.text = i.ToString();
 	}

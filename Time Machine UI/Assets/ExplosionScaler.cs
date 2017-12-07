@@ -13,7 +13,7 @@ public class ExplosionScaler : MonoBehaviour {
         rectTransform = GetComponent<RectTransform>();
 	}
 	
-	// Update is called once per frame
+	// Set the size of the explosion image constantly.
 	void Update () {
         rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, slider.value * 8);
         rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, slider.value * 8);

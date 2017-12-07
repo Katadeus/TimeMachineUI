@@ -13,6 +13,8 @@ public class DigitsAggregator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+        // Set up the digits with their names and locations
 		for (int i = 0; i < numDigits; i++)
         {
             temp = Instantiate<GameObject>(prefab);
@@ -25,9 +27,12 @@ public class DigitsAggregator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        // Reset the number each frame, then recalculate it by iterating through the digits
         number = 0;
 		for (int i = 0; i < numDigits; i++)
         {
+            // Each one is a tens place down, so the first one is the highest, and then subtracting i each time yields the correct place from there.
             number += digits[i].GetComponent<NumberButtonScript>().i * Mathf.RoundToInt(Mathf.Pow(10,numDigits - i - 1));
         }
 	}
