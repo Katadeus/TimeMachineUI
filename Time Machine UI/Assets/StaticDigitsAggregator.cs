@@ -31,10 +31,21 @@ public class StaticDigitsAggregator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        number = 0;
-		for (int i = 0; i < numDigits; i++)
+
+        // This code is dumb cause it grabs numbers and that aint what this bit is about.
+        // number = 0;
+		// for (int i = 0; i < numDigits; i++)
+        // {
+        //    number += digits[i].GetComponent<NumberScript>().i * Mathf.RoundToInt(Mathf.Pow(10,numDigits - i - 1));
+        //}
+
+        for (int i = 0; i < numDigits; i++)
         {
-            number += digits[i].GetComponent<NumberScript>().i * Mathf.RoundToInt(Mathf.Pow(10,numDigits - i - 1));
+            tempDigit = (int)(number / Mathf.Pow(10, numDigits - i - 1));
+            for(int x = 0; x < 4; x++) {
+                tempDigit = (int)(tempDigit - Mathf.Pow(10, x + 1) * (int)(tempDigit / Mathf.Pow(10, x + 1)));
+            }
+            digits[i].GetComponent<NumberScript>().i = tempDigit;
         }
 	}
 }

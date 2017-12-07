@@ -29,6 +29,10 @@ public class PowerController : MonoBehaviour {
 
         powerDemand = timeDiffPanel.GetComponent<TimeDifferenceCalculator>().timeDifference;
         tempPower -= (tempPower - power) * 2 * Time.deltaTime;
+        if (tempPower > 120)
+        {
+            tempPower = 120;
+        }
         powerBar.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, tempPower);
         tempPowerDemand -= (tempPowerDemand - powerDemand/rate) * 10 * Time.deltaTime;
         if (tempPowerDemand < power / 2)
@@ -54,6 +58,19 @@ public class PowerController : MonoBehaviour {
         {
             tempPowerDemand = tempPower;
         }
+        if (tempPowerDemand < 0)
+        {
+            tempPowerDemand = 0;
+        }
+        if (tempPowerDemand == 0)
+        {
+            powerDemandBar.transform.localScale = new Vector3(0, 0, 0);
+        }
+        else
+        {
+            powerDemandBar.transform.localScale = new Vector3(1, 1, 1);
+        }
+
         powerDemandBar.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, tempPowerDemand);
 	}
 }
