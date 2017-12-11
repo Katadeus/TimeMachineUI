@@ -8,6 +8,7 @@ public class MainButtonScript : MonoBehaviour {
     public GameObject TargetTimeYMDPanel;
     public GameObject CurrentADBCE;
     public GameObject TargetADBCE;
+    public GameObject AltitudeManager;
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +30,9 @@ public class MainButtonScript : MonoBehaviour {
 
         // Set AD/BCE button
         CurrentADBCE.GetComponent<ToggleButtonScript>().Set(TargetADBCE.GetComponent<ToggleButtonScript>().boo);
+
+        // Set altitude
+        AltitudeManager.GetComponent<AltitudeManager>().Jump();
 
     }
 }
