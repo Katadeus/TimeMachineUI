@@ -12,7 +12,7 @@ public class PowerController : MonoBehaviour {
     public GameObject powerDemandBar;
     private float tempPower;
     public float tempPowerDemand;
-    public float rate = 20000;
+    public float rate = 2000;
     public Color normalDemand;
     public Color dangerDemand;
     public Color overDemand;
@@ -44,7 +44,7 @@ public class PowerController : MonoBehaviour {
 
 
         // Power demand requires a bit more work.
-        powerDemand = timeDiffPanel.GetComponent<TimeDifferenceCalculator>().timeDifference;
+        powerDemand = timeDiffPanel.GetComponent<TimeDifferenceCalculator>().timeDiffDays;
 
         // Temp power approaches powerDemand/rate. PowerDemand is expressed as the length of travel in days.
         tempPowerDemand -= (tempPowerDemand - powerDemand/rate) * 10 * Time.deltaTime;

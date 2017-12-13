@@ -5,6 +5,7 @@ using UnityEngine;
 public class TimeDifferenceCalculator : MonoBehaviour {
 
     public int timeDifference = 0; // In days
+    public int timeDiffDays = 0;
     public GameObject NY; //new year
     public GameObject NM; //new month
     public GameObject ND; //new day
@@ -49,6 +50,7 @@ public class TimeDifferenceCalculator : MonoBehaviour {
             PM.GetComponent<ToggleButtonScript>().Set(true);
             timeDifference = Mathf.Abs(timeDifference);
         }
+        timeDiffDays = timeDifference;
         DY.GetComponent<StaticDigitsAggregator>().number = timeDifference/365;
         timeDifference %= 365;
         DM.GetComponent<StaticDigitsAggregator>().number = timeDifference/30;
