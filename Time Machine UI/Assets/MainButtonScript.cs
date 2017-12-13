@@ -34,5 +34,6 @@ public class MainButtonScript : MonoBehaviour {
         // Set altitude
         AltitudeManager.GetComponent<AltitudeManager>().Jump();
 
+
     }
 }

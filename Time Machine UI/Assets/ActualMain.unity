@@ -510,6 +510,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeDifference: 0
+  NY: {fileID: 1253140723}
+  NM: {fileID: 29736095}
+  ND: {fileID: 925154409}
+  NE: {fileID: 386043473}
+  OY: {fileID: 1767405389}
+  OM: {fileID: 361532785}
+  OD: {fileID: 621887847}
+  OE: {fileID: 1516592236}
+  DY: {fileID: 912769167}
+  DM: {fileID: 1602279570}
+  DD: {fileID: 432466022}
+  PM: {fileID: 507192844}
 --- !u!1 &199191161
 GameObject:
   m_ObjectHideFlags: 0
@@ -2963,7 +2975,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 725851761}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 309.5, y: 155, z: 0}
+  m_LocalPosition: {x: 310, y: 155, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1586116379}
@@ -4582,7 +4594,7 @@ MonoBehaviour:
   numDigits: 5
   prefab: {fileID: 1705512658246498, guid: bdeb03e0d0182e3448fc0818c44fda96, type: 2}
   digits: []
-  width: 75
+  width: 80
 --- !u!1 &1395088386
 GameObject:
   m_ObjectHideFlags: 0
